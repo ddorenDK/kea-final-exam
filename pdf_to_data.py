@@ -53,6 +53,9 @@ def flush_temp_json():
     for f in filelist:
         os.remove(os.path.join('./temp_json', f))
 
+
+#TODO
+#Use 'panda' package to work with the material data and put it correctly into the epd object 
 #populates a python object from a json file
 def populate_epd_object_from_json(table):
     whole_table = json.load(open(table))
@@ -61,7 +64,7 @@ def populate_epd_object_from_json(table):
     print(f'Entries Found {len(whole_table[2])}')
     first_row = whole_table[1]
     print(whole_table[1])
-    #TODO
+    
 
 def move_found_json_table(table, it):
     if table != None:
