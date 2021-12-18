@@ -5,6 +5,9 @@ import json
 import shutil
 
 #TODO
+#Extract a links to pdf file
+
+#TODO
 #Move this all to a better location
 epd_pop_list = []
 temp_pdf_location = "./temp_pdf/single_epd.pdf"
