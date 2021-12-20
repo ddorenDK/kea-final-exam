@@ -2,7 +2,7 @@
 
 ## Python
 - The python script should generate a json file with all the materials
->Current Iteration: 
+### Current Iteration: 
   - Restructure everything 
   - Add option for debug
   - Improve Comments & Readability
