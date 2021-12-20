@@ -2,6 +2,11 @@
 
 ## Python
 - The python script should generate a json file with all the materials
+>Current Iteration: 
+  - Restructure everything 
+  - Add option for debug
+  - Improve Comments & Readability
+  - Add the option for arguments
 
 ### Docker*
 - The Docker Container should have camelot properly installed to be able to extract the data faster (by removing the number of false tables extracted) and more accurate (by providing better tables)
