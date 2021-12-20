@@ -16,14 +16,10 @@ def get_epd_urls(base_url, database_url, debug = False):
             if not href.startswith('/media'):
                 continue
             url_list.append(base_url + href)
-    #Debug option
-    if debug is True:
-        print ("############### GET # EPD # URLS ##############")
-        # Debug Mode On; get_epd_urls; Printing The Urls
-        print (f'> Urls found: {len(url_list)}')
-        print ("> Printing the URL List:")
-        print (url_list)
-        print ("###############################################")
+    # DEBUG 
+    if debug:
+        print (f'>get_epd_urls Method \n>URL provided {database_url} \n>URLS extracted: {len(url_list)}')
+    # ----- 
     return url_list
 
 
