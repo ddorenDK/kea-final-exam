@@ -19,7 +19,6 @@
 - The web page acts as a place to see the generated json artifact
 
 ### * Still Working on it  
-
-Trying using tabula instead of camelot
-Requires java and python
-Since all this runs on ubuntu in the pipeline shouldn't be a problem 
+- Trying using tabula instead of camelot
+- Requires java and python
+- Since all this runs on ubuntu in the pipeline shouldn't be a problem 
