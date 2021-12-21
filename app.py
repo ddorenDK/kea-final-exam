@@ -91,7 +91,7 @@ def links_to_pdfs(urls, debug = False, temp_directory_location = "./temp_pdf"):
     iteration = 1
 
     for url in urls:
-        full_temp_pdf_location = temp_directory_location + '/' + 'epd_' + str(iteration)
+        full_temp_pdf_location = temp_directory_location + '/' + 'epd_' + str(iteration) + '.pdf'
         r = requests.get(url, allow_redirects=True)
         # DEBUG
         if debug:
@@ -174,11 +174,21 @@ def flush_temp_json():
 def flush_temp_pdf():
     filelist = [ f for f in os.listdir('./temp_pdf') if f.endswith(".pdf") ]
     for f in filelist:
-        os.remove(os.path.join('./temp_pdf', f))
+        os.remove(os.path.join('./temp_pdf', f)) 
 
 def flush_all():
-    flush_temp_json()
-    flush_temp_pdf()
+    try:
+        flush_temp_json()
+    except (FileNotFoundError) as e: 
+        print(f'>WARNING \n>Could not flush temp_json, file not found')
+        print(f'Error : {e}')
+    try: 
+        flush_temp_pdf()
+    except (FileNotFoundError) as e: 
+        print(f'>WARNING \n>Could not flush temp_pdf, file not found')
+        print(f'Error : {e}')
+
+
 ########################################################################################################################################################################
 ############################################################   SAVE THE TABLE   ########################################################################################
 
@@ -193,11 +203,17 @@ def move_table_to_saved(table, debug = False):
 ########################################################################################################################################################################
 ############################################################   SAVE THE TABLE   ########################################################################################
 
+# 1.1
 # Get a list with urls to pdfs
 # pdf_links_list = get_epd_urls(base_url, database_url)
 
-# # Download the pdf from the urls
-# link_to_pdf(pdf_links_list[0], debug = True)
+# # 2.1
+# # # Download the pdf from the urls
+# # link_to_pdf(pdf_links_list[0], debug = True)
+
+# # 1.2
+# # Download all pdfs from list of urls
+# links_to_pdfs(pdf_links_list)
 
 # Extract the tables from a pdf
 # pdf_to_tables("./temp_pdf/single_epd.pdf")
@@ -212,7 +228,9 @@ def move_table_to_saved(table, debug = False):
 
 # dfs = tabula.read_pdf("./temp_pdf/single_epd.pdf", pages='all')
 
-tabula.convert_into("./temp_pdf/single_epd.pdf", "output.json", output_format="json", pages='all', lattice=True)
+# tabula.convert_into("./temp_pdf/single_epd.pdf", "output.json", output_format="json", pages='all', lattice=True)
+tabula.io.build_options(pages=None, guess=True, area=None, relative_area=False, lattice=False, stream=False, password=None, silent=None, columns=None, format=None, batch=None, output_path=None, options='')
+# tabula.convert_into_by_batch("./temp_pdf", output_format='json', pages='all')
 
 
 
