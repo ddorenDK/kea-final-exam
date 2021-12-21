@@ -20,6 +20,6 @@
 
 ### * Still Working on it  
 
-Try using tabula instead of camelot
+Trying using tabula instead of camelot
 Requires java and python
 Since all this runs on ubuntu in the pipeline shouldn't be a problem 
