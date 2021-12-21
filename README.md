@@ -2,6 +2,7 @@
 
 ## Python
 - The python script should generate a json file with all the materials
+- Progress can be tracked in the app.py file, named so because it's pleasant to the eye 
 ### Current Iteration: 
   - Restructure everything 
   - Add option for debug
