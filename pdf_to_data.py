@@ -62,10 +62,10 @@ def populate_epd_object_from_json(table):
     print(whole_table[1])
     
 
-def move_found_json_table(table, it):
-    if table != None:
-        #TODO
-        #Make a nicer way of naming the saved tables
+def move_found_json_table(table, debug = False):
+    if debug:
+        print
+    
         print (f'Saving {table}')
         shutil.move(table, found_tables_location)
 
