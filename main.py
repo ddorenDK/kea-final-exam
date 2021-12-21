@@ -22,10 +22,11 @@ base_url = 'https://www.epddanmark.dk'
 #Add a flag -ghostscript that will use camelot lattice (and ghostscript) instead of  camelot stream
 #stream and lattice a different ways camelot can get the tables from pdfs
 
-
+#TODO
+# Add parameters such as debug, tables and others
 def main():
     list_url = get_epd_urls(base_url, database_url)
-    
+    print (list_url)
 
     extract(list_url, 3)
 
