@@ -12,7 +12,7 @@
 
 ## Docker*
 - Only used during development.
-- Dockerfile frequently changed, saved and deleted locally to prevent golden images
+- Dockerfile frequently changed, saved and deleted locally to prevent golden images (the saving part)
 
 
 ## Azure Pipelines*
