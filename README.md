@@ -3,7 +3,7 @@
 ## Python
 - The python script should generate a json file with all the materials
 - Progress can be tracked in the app.py file, named so because it's pleasant to the eye 
-- Currently rewriting and testing the whole thing to use tabula, until a successfull run, then i'll restructure and automate for all pdf files
+- Currently rewriting and testing the whole thing using tabula as the main pdf tool, then it'll be restructured
 ### Current Iteration: 
   - Restructure everything 
   - Add option for debug
