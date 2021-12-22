@@ -1,6 +1,6 @@
 
 
-class Epd:
+class epd:
 
     def get_sum(self):
         return self.A1 

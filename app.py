@@ -180,12 +180,12 @@ def flush_all():
     try:
         flush_temp_json()
     except (FileNotFoundError) as e: 
-        print(f'>WARNING \n>Could not flush temp_json, file not found')
+        print(f'>WARNING \n>Could not flush temp_json, directory not found')
         print(f'Error : {e}')
     try: 
         flush_temp_pdf()
     except (FileNotFoundError) as e: 
-        print(f'>WARNING \n>Could not flush temp_pdf, file not found')
+        print(f'>WARNING \n>Could not flush temp_pdf, directory not found')
         print(f'Error : {e}')
 
 
@@ -205,11 +205,11 @@ def move_table_to_saved(table, debug = False):
 
 # 1.1
 # Get a list with urls to pdfs
-# pdf_links_list = get_epd_urls(base_url, database_url)
+pdf_links_list = get_epd_urls(base_url, database_url)
 
 # # 2.1
 # # # Download the pdf from the urls
-# # link_to_pdf(pdf_links_list[0], debug = True)
+link_to_pdf(pdf_links_list[0], debug = True)
 
 # # 1.2
 # # Download all pdfs from list of urls
@@ -229,8 +229,8 @@ def move_table_to_saved(table, debug = False):
 # dfs = tabula.read_pdf("./temp_pdf/single_epd.pdf", pages='all')
 
 # tabula.convert_into("./temp_pdf/single_epd.pdf", "output.json", output_format="json", pages='all', lattice=True)
-tabula.io.build_options(pages=None, guess=True, area=None, relative_area=False, lattice=False, stream=False, password=None, silent=None, columns=None, format=None, batch=None, output_path=None, options='')
-# tabula.convert_into_by_batch("./temp_pdf", output_format='json', pages='all')
+tabula.io.build_options(pages=all, guess=False, area=None, relative_area=False, lattice=True, stream=False, password=None, silent=None, columns=None, format=json, batch=True, output_path="./tabula_output", options='')
+tabula.io.convert_into_by_batch("./temp_pdf", output_format='json', pages='all', lattice = True, guess=False)
 
 
 
