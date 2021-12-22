@@ -3,7 +3,7 @@ import os
 import shutil
 from bs4 import BeautifulSoup
 import requests
-import tabula
+import pdfplumber
 
 
 #Place to test and update methods
@@ -204,16 +204,44 @@ def move_table_to_saved(table, debug = False):
 ############################################################   SAVE THE TABLE   ########################################################################################
 
 # 1.1
-# Get a list with urls to pdfs
+# # Get a list with urls to pdfs
 pdf_links_list = get_epd_urls(base_url, database_url)
 
-# # 2.1
-# # # Download the pdf from the urls
-link_to_pdf(pdf_links_list[0], debug = True)
+# # # 2.1
+# # # # Download the pdf from the urls
+# link_to_pdf(pdf_links_list[0], debug = True)
 
-# # 1.2
-# # Download all pdfs from list of urls
-# links_to_pdfs(pdf_links_list)
+# # # 1.2
+# # # Download all pdfs from list of urls
+links_to_pdfs(pdf_links_list)
+
+# pdf = pdfplumber.open("./temp_pdf/single_epd.pdf")
+
+# for page in pdf.pages:
+#     table = page.extract_table()
+#     print(table) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Extract the tables from a pdf
 # pdf_to_tables("./temp_pdf/single_epd.pdf")
@@ -229,8 +257,8 @@ link_to_pdf(pdf_links_list[0], debug = True)
 # dfs = tabula.read_pdf("./temp_pdf/single_epd.pdf", pages='all')
 
 # tabula.convert_into("./temp_pdf/single_epd.pdf", "output.json", output_format="json", pages='all', lattice=True)
-tabula.io.build_options(pages=all, guess=False, area=None, relative_area=False, lattice=True, stream=False, password=None, silent=None, columns=None, format=json, batch=True, output_path="./tabula_output", options='')
-tabula.io.convert_into_by_batch("./temp_pdf", output_format='json', pages='all', lattice = True, guess=False)
+# tabula.io.build_options(pages=all, guess=False, area=None, relative_area=False, lattice=True, stream=False, password=None, silent=None, columns=None, format=json, batch=True, output_path="./tabula_output", options='')
+# tabula.io.convert_into_by_batch("./temp_pdf", output_format='json', pages='all', lattice = True, guess=False)
 
 
 
