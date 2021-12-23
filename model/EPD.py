@@ -1,5 +1,4 @@
 
-
 class epd:
 
     def get_sum(self):
