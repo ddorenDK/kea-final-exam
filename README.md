@@ -4,7 +4,8 @@
 - The python script should generate a json file with all the materials
 - Progress can be tracked in the app.py file, named so because it's pleasant to the eye 
 - ~~Currently rewriting and testing the whole thing using tabula as the main pdf tool, then it'll be restructured~~
-- Currently testing pdfplumber
+- ~~Currently testing pdfplumber~~
+- The script will use pdfplumber as the tool for extracting data from pdfs
 
 ### Current Iteration: 
   - Restructure everything 
