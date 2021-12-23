@@ -1,17 +1,17 @@
 # Work In Progress
 
 ## Python
-- The python script should generate a json file with all the materials
+- The python program should generate a json file with all the materials
 - Progress can be tracked in the app.py file, named so because it's pleasant to the eye 
 - ~~Currently rewriting and testing the whole thing using tabula as the main pdf tool, then it'll be restructured~~
 - ~~Currently testing pdfplumber~~
-- The script will use pdfplumber as the tool for extracting data from pdfs
+- The project will use pdfplumber as the tool for extracting data from pdfs
 
 ### Current Iteration: 
   - Restructure everything 
   - Add option for debug
   - Improve Comments & Readability
-  - Add the option for arguments
+  - Add the option for argument
 
 ## Docker*
 - Only used during development.
