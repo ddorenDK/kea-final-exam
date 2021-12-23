@@ -44,6 +44,7 @@ def get_epd_urls(base_url, database_url, debug = False, limit = -1):
             if not href.startswith('/media'):
                 continue
             url_list.append(base_url + href)
+            it += 1
     # DEBUG 
     if debug:
         print (f'>Method get_epd_urls \n>URL provided {database_url} \n>URLS extracted: {len(url_list)} \n')
@@ -79,7 +80,7 @@ def link_to_pdf(url, debug = False):
 
 #1.2
 # Downloads the pdfs from a list of URLs
-def links_to_pdfs(urls, debug = False, temp_directory_location = "./temp_pdf", limit=-1):
+def links_to_pdfs(urls, debug = False, temp_directory_location = "./temp_pdf"):
 
     if not os.path.exists(temp_directory_location):
         # DEBUG
@@ -93,12 +94,7 @@ def links_to_pdfs(urls, debug = False, temp_directory_location = "./temp_pdf", l
             print (f'>Method: links_to_pdfs \n>Found existing temp_pdf directory \n')
         # -----
 
-    # used to provide unique file names for the pdfs
-    iteration = 1
-
     for url in urls:
-        if iteration > limit and not limit < 0:
-            break
         # This will be the location of the url, the full download url is split by / and the last part is saved as the name of the pdf file using s.split('_')[-1]
         full_temp_pdf_location = temp_directory_location + '/' + url.split('/')[-1]
         r = requests.get(url, allow_redirects=True)
@@ -110,7 +106,6 @@ def links_to_pdfs(urls, debug = False, temp_directory_location = "./temp_pdf", l
         with open(full_temp_pdf_location, 'wb') as f:
             f.write(r.content)
 
-        iteration = iteration + 1
 
 
 ########################################################################################################################################################################
@@ -214,7 +209,7 @@ pdf_links_list = get_epd_urls(base_url, database_url, limit = 10)
 
 # # # 1.2
 # # # Download all pdfs from list of urls
-links_to_pdfs(pdf_links_list, debug = True, limit = 10)
+links_to_pdfs(pdf_links_list, debug = True)
 
 # Extract the tables from a pdf
 # pdf_to_tables("./temp_pdf/single_epd.pdf")
