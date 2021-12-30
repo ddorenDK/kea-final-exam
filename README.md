@@ -6,6 +6,7 @@
 - ~~Currently rewriting and testing the whole thing using tabula as the main pdf tool, then it'll be restructured~~
 - ~~Currently testing pdfplumber~~
 - The project will use pdfplumber as the tool for extracting data from pdfs
+- pdfblumber doesn't work properly with form data, will have to either go back or make a method that will extract data from form fields :( 
 
 ### Current Iteration: 
   - Restructure everything 
