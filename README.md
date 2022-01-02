@@ -1,30 +1,22 @@
 # Work In Progress
+[![Build Status](https://dev.azure.com/ddoren-dwr/kea-cs-ap-final-exam/_apis/build/status/ddorenDK.kea-final-exam?branchName=main)](https://dev.azure.com/ddoren-dwr/kea-cs-ap-final-exam/_build/latest?definitionId=1&branchName=main)
 
 ## Python
-- The python program should generate a json file with all the materials
-- Progress can be tracked in the app.py file, named so because it's pleasant to the eye 
-- ~~Currently rewriting and testing the whole thing using tabula as the main pdf tool, then it'll be restructured~~
-- ~~Currently testing pdfplumber~~
+- The python program should generate a json file with all the material data
 - The project will use pdfplumber as the tool for extracting data from pdfs
-- pdfblumber doesn't work properly with form data, will have to either go back or make a method that will extract data from form fields :( 
+- pdfblumber doesn't work properly with form data, will have to either go back or make a method that will extract data from form fields properly, as currently it is extracted as     'None' :( 
 
-### Current Iteration: 
-  - Restructure everything 
-  - Add option for debug
-  - Improve Comments & Readability
-  - Add the option for argument
+## Docker
+- Currently Only used during development.
+- If the project switches to using tabula or camelot, the dockerfile will have an use in the Azure Pipeline
 
-## Docker*
-- Only used during development.
-- Dockerfile frequently changed, saved and deleted locally to prevent golden images (the saving part)
+## Azure Pipelines
+- The pipeline should run once a week and generate a new updated json file
+- FAILS because: ##[error]No hosted parallelism has been purchased or granted. To request a free parallelism grant, please fill out the following form https://aka.ms/azpipelines-parallelism-request
 
-
-## Azure Pipelines*
-- The pipeline should run once a month and generate a new updated json file artifact
-
-## Github Pages*
+## Github Pages
 - The web page acts as a place to see the generated json artifact
 
 ### * Current Tasks 
-- Try tabula and pdfplumber for table extraction
-- Rewrite and Restructure initial the code
+- Fix the form data reading with the pdfplumber
+- Get an Azure subscription
