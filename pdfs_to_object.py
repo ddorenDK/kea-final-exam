@@ -13,7 +13,13 @@ def list_to_string(list):
 
 #2.1
 # Gets a pdf and returns a STRING with the rows containing GWP or GWP-total
-def extract_gwp_from_pdf(pdfs_location='./temp_pdf', debug=False):
+def extract_gwp_from_pdfs(pdfs_location='./temp_pdf', debug=False):
+    #TODO 
+    # Make it work with form data, currently form data is seen as None
+    # The solution can be found on those pages:
+    # https://github.com/jsvine/pdfplumber/issues/120
+    # https://github.com/jsvine/pdfplumber
+
     #list that will hold found gwps in a string format
     found_gwps = []
     for file in os.listdir(pdfs_location):
@@ -51,3 +57,14 @@ def extract_gwp_from_pdf(pdfs_location='./temp_pdf', debug=False):
                         # print(rows[0])
                         found_gwps.append(found_gwp)
     return found_gwps
+
+def string_to_json(gwp_list):
+    #TODO 
+    #Utter bullshit and crap
+    #Make this actually work, !but fix the form data first!
+    with open('epd_data.json', 'w') as f:
+        f.close()
+    with open('epd_data.json', 'a') as f:
+            for gwp in gwp_list:
+                print(f'>{gwp}')
+                f.write(gwp)
