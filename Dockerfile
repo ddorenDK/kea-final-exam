@@ -1,8 +1,8 @@
-FROM minidocks/ghostscript:latest
+FROM ubuntu:18.04
 WORKDIR /usr/src/app
-RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
-RUN python3 -m ensurepip
-RUN pip3 install --no-cache --upgrade pip setuptools
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -y python3-pip
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 COPY . .
