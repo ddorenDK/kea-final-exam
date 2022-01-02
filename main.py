@@ -1,38 +1,25 @@
-from os import system
-from pdf_to_data import extract
-from site_to_links import get_epd_urls
+from get_epd_urls import get_epd_urls
+from links_to_pdfs import links_to_pdfs
+from pdfs_to_object import extract_gwp_from_pdf
+import argparse
 
-#TODO
-#Clean up the requirements folder 
 
-#TODO
-#Put this into the github readme file 
-#TO RUN 
-#$> pip install virtualenv
-#$> py -m venv .env
-#$> .\.env\Scripts\activate
-#$> pip install -r requirements.txt
-
-#Links to the epddanmark, epd source
-database_url = 'https://www.epddanmark.dk/epd-databasen/'
-base_url = 'https://www.epddanmark.dk'
-
-#TODO
-#Add an option for camelot lattice with increased accuracy by installing ghostscript
-#Add a flag -ghostscript that will use camelot lattice (and ghostscript) instead of  camelot stream
-#stream and lattice a different ways camelot can get the tables from pdfs
-
-#TODO
-# Add parameters such as debug, tables and others
 def main():
-    list_url = get_epd_urls(base_url, database_url)
-    print (list_url)
+    
+    database_url = 'https://www.epddanmark.dk/epd-databasen/'
+    base_url = 'https://www.epddanmark.dk'
 
-    extract(list_url, 3)
+    # 1.1
+    # # # Get a list with urls to pdfs
+    pdf_links_list = get_epd_urls(base_url, database_url, limit = 10)
 
+    # 1.2
+    links_to_pdfs(pdf_links_list, debug = True)
 
-if __name__ == "__main__":
+    # 2
+    extracted_gwps = extract_gwp_from_pdf(debug=True)
+
+    
+if __name__ == '__main__':
+    # This code won't run if this file is imported.
     main()
-
-
-
