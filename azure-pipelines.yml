@@ -4,10 +4,6 @@ parameters:
     type: boolean
     default: false
 
-  - name: AppDebugMode
-    displayName: Run the python app in debug Mode
-    type: boolean
-    default: ''
 
 variables:
   - name: System.Debug
@@ -46,7 +42,7 @@ stages:
 
       - bash: pip install -r requirements.txt
 
-      - bash: python main.py --debug $(AppDebugMode)
+      - bash: python main.py --debug 'True'
 
       - publish: epd_data.json
         artifact: epd_data.json
