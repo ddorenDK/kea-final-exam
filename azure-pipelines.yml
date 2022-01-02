@@ -24,9 +24,6 @@ trigger:
       - pipeline
       - refs/tags/*
 
-pool:
-  vmImage: ubuntu-latest
-
 stages:
   - stage: buildAndRun
     displayName:  'Build and Run' 
