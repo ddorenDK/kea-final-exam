@@ -24,15 +24,12 @@ trigger:
       - pipeline
       - refs/tags/*
 
-pool:
-  vmImage: ubuntu-latest
-
 stages:
   - stage: buildAndRun
     displayName:  'Build and Run' 
     jobs:
-    - job: unittest
-      displayName: Unit tests
+    - job: buildRun
+      displayName: buildRun
       steps:
 
       - task: UsePythonVersion@0
