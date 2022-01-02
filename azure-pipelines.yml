@@ -1,0 +1,52 @@
+parameters:
+  - name: DebugMode
+    displayName: Run in Debug Mode
+    type: boolean
+    default: false
+
+  - name: AppDebugMode
+    displayName: Run the python app in debug Mode
+    type: boolean
+    default: ''
+
+variables:
+  - name: System.Debug
+    value: ${{ parameters.DebugMode }}
+
+
+pr:
+  branches:
+    include:
+    - pipeline
+    - main
+    - releases/*
+  drafts: false
+trigger:
+  branches:
+    include:
+      - main
+      - pipeline
+      - refs/tags/*
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: buildAndRun
+    displayName:  'Build and Run' 
+    jobs:
+    - job: unittest
+      displayName: Unit tests
+      steps:
+
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '3.8'
+        displayName: Setting up Python
+
+      - bash: pip install -r requirements.txt
+
+      - bash: python main.py --debug $(AppDebugMode)
+
+      - publish: epd_data.json
+        artifact: epd_data.json
