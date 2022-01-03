@@ -16,6 +16,7 @@
 
 ## Github Pages
 - The web page acts as a place to see the generated json artifact
+- Work in progress
 
 ### * Current Tasks 
 - Fix the form data reading with the pdfplumber
