@@ -11,7 +11,7 @@ def main():
     parser = argparse.ArgumentParser(description = "Extracts epd information from edpdanmark and outputs a json file with the data")
     parser.add_argument("--debug", default=False, help = "Debug Mode; True/False") 
     args = parser.parse_args()
-    Mdebug = True if args.debug == 'True' else False
+    Mdebug = True if args.debug == 'true' else False
 
     # Links variables
     database_url = 'https://www.epddanmark.dk/epd-databasen/'
