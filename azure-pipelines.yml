@@ -13,6 +13,9 @@ parameters:
 variables:
   - name: System.Debug
     value: ${{ parameters.DebugMode }}
+
+  - name: debugModePython
+    value: ${{ parameters.DebugMode }}
   
 
 
@@ -43,13 +46,13 @@ stages:
           versionSpec: '3.8'
         displayName: Setting up Python
 
-      - bash: echo {parameters.DebugModePython}
+      - bash: echo ${{debugModePython}}
         displayName: 'DEBUG'
 
       - bash: pip install -r requirements.txt
         displayName: 'Installing pip requirements' 
 
-      - bash: python main.py --debug '{parameters.DebugModePython}'
+      - bash: python main.py --debug '${{parameters.DebugModePython}}'
         displayName: 'Running python main.py'
 
       - publish: epd_data.json
