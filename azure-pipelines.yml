@@ -1,6 +1,11 @@
 parameters:
   - name: DebugMode
-    displayName: Run in Debug Mode
+    displayName: Run the Pipeline in Debug Mode
+    type: boolean
+    default: false
+
+  - name: DebugModePython
+    displayName: Run the python script in Debug Mode
     type: boolean
     default: false
 
@@ -9,7 +14,7 @@ variables:
   - name: System.Debug
     value: ${{ parameters.DebugMode }}
 
-
+  
 pr:
   branches:
     include:
@@ -38,8 +43,10 @@ stages:
         displayName: Setting up Python
 
       - bash: pip install -r requirements.txt
+        displayName: 'Installing pip requirements' 
 
-      - bash: python main.py --debug 'True'
+      - bash: python main.py --debug '${{parameters.DebugModePython}}'
+        displayName: 'Running python main.py'
 
       - publish: epd_data.json
         artifact: epd_data.json

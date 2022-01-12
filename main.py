@@ -11,22 +11,23 @@ def main():
     parser = argparse.ArgumentParser(description = "Extracts epd information from edpdanmark and outputs a json file with the data")
     parser.add_argument("--debug", default=False, help = "Debug Mode; True/False") 
     args = parser.parse_args()
-    
+    Mdebug = True if args.debug == 'True' else False
+
     # Links variables
     database_url = 'https://www.epddanmark.dk/epd-databasen/'
     base_url = 'https://www.epddanmark.dk'
 
     # 1.1
     # Get a list with urls to pdfs
-    pdf_links_list = get_epd_urls(base_url, database_url, limit = 7 , debug = args.debug)
+    pdf_links_list = get_epd_urls(base_url, database_url, limit = 7 , debug = Mdebug)
 
     # # # 1.2
     # # # Downloading all the pdfs to the temp_pdf folder
-    links_to_pdfs(pdf_links_list, debug = args.debug)
+    links_to_pdfs(pdf_links_list, debug = Mdebug)
 
     # # 2
     # # Extracting the epd data from the pdfs into a list with data for each pdf
-    extracted_gwps = extract_gwp_from_pdfs(debug = args.debug)
+    extracted_gwps = extract_gwp_from_pdfs(debug = Mdebug)
 
     string_to_json(extracted_gwps)
 
