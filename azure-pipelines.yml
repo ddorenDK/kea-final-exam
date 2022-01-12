@@ -43,6 +43,9 @@ stages:
           versionSpec: '3.8'
         displayName: Setting up Python
 
+      - bash: echo {parameters.DebugModePython}
+        displayName: 'DEBUG'
+
       - bash: pip install -r requirements.txt
         displayName: 'Installing pip requirements' 
 
