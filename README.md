@@ -1,5 +1,8 @@
 # Work In Progress
 [![Build Status](https://dev.azure.com/dori1411/kea-cs-final-project/_apis/build/status/ddorenDK.kea-final-exam?branchName=pipelines)](https://dev.azure.com/dori1411/kea-cs-final-project/_build/latest?definitionId=1&branchName=pipelines)
+
+![Status Badge](https://dev.azure.com/dori1411/kea-cs-final-project/_apis/build/status/ddorenDK.kea-final-exam?branchName=main)
+
 ## Python
 - The python program should generate a json file with all the material data
 - The project will use pdfplumber as the tool for extracting data from pdfs
