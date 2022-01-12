@@ -14,11 +14,7 @@ variables:
   - name: System.Debug
     value: ${{ parameters.DebugMode }}
 
-  - name: debugModePython
-    value: ${{ parameters.DebugMode }}
   
-
-
 pr:
   branches:
     include:
@@ -46,7 +42,7 @@ stages:
           versionSpec: '3.8'
         displayName: Setting up Python
 
-      - bash: echo ${{debugModePython}}
+      - bash: echo ${{parameters.DebugModePython}}
         displayName: 'DEBUG'
 
       - bash: pip install -r requirements.txt
