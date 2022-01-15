@@ -12,7 +12,6 @@
 
 ## Azure Pipelines
 - The pipeline should run once a week and generate a new updated json file
-- FAILS because: ##[error]No hosted parallelism has been purchased or granted. To request a free parallelism grant, please fill out the following form https://aka.ms/azpipelines-parallelism-request
 
 ## Github Pages
 - The web page acts as a place to see the generated json artifact
