@@ -31,7 +31,6 @@ def main():
 
     string_to_json(extracted_gwps)
 
-    flush_all()
 
 if __name__ == '__main__':
     # This code won't run if this file is imported.
