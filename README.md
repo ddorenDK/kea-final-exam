@@ -19,4 +19,3 @@
 
 ### * Current Tasks 
 - Fix the form data reading with the pdfplumber
-- Get an Azure subscription
