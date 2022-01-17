@@ -52,7 +52,7 @@ coverage.xml
 .pytest_cache/
 
 # File Storage Directories
-temp_pdf/
+temp_pdf/*
 
 # Translations
 *.mo
