@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+# Welcome to My Final Exam Project
 
-You can use the [editor on GitHub](https://github.com/ddorenDK/kea-final-exam/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## PDF Data Extraction Branches
 
-### Markdown
+### Camelot
+[Camelot Branch](https://github.com/ddorenDK/kea-final-exam/tree/camelot)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Requirements:
+- Python
+- Ghostscript
 
-```markdown
-Syntax highlighted code block
+Output:
+- Each table is extracted into a pandas DataFrame, which seamlessly integrates into ETL and data analysis workflows. You can also export tables to multiple formats, which include CSV, JSON, Excel, HTML, Markdown, and Sqlite.
 
-# Header 1
-## Header 2
-### Header 3
+### Tabula
+[Tabula Branch](https://github.com/ddorenDK/kea-final-exam/tree/tabula)
 
-- Bulleted
-- List
+Requirements:
+- Java 8+
+- Python 3.6+
 
-1. Numbered
-2. List
+Output:
+- Tabula extracts tables from a PDF into a DataFrame, or a JSON. It can also extract tables from a PDF and save the file as a CSV, a TSV, or a JSON
 
-**Bold** and _Italic_ and `Code` text
+### PDFplumber
+[pdfplumber Branch](https://github.com/ddorenDK/kea-final-exam/tree/pdfplumber)
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ddorenDK/kea-final-exam/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Requirements:
+- Python
+- ImageMagick and ghostscript for visual debugging
