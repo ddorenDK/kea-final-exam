@@ -62,9 +62,10 @@ def string_to_json(gwp_list):
     #TODO 
     #Utter bullshit and crap
     #Make this actually work, !but fix the form data first!
-    with open('epd_data.json', 'w') as f:
+    with open('epd_data.txt', 'w') as f:
         f.close()
-    with open('epd_data.json', 'a') as f:
+    with open('epd_data.txt', 'a') as f:
             for gwp in gwp_list:
                 print(f'>{gwp}')
                 f.write(gwp)
+                f.write("\r\n")

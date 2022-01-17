@@ -19,7 +19,7 @@ def main():
 
     # 1.1
     # Get a list with urls to pdfs
-    pdf_links_list = get_epd_urls(base_url, database_url, limit = 7 , debug = Mdebug)
+    pdf_links_list = get_epd_urls(base_url, database_url , debug = Mdebug)
 
     # # # 1.2
     # # # Downloading all the pdfs to the temp_pdf folder
